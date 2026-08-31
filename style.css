@@ -1,0 +1,487 @@
+/* Smooth scroll for single-page ID jumps */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base Font & Body */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #334155;
+  background-color: #f8fafc;
+}
+
+/* Brand styling */
+.font-brand {
+  letter-spacing: -0.5px;
+}
+
+.text-primary-dot {
+  color: #2B7FFF; /* Modern vibrant blue */
+}
+
+/* Site Header Styling */
+.site-header {
+  background-color: rgba(255, 255, 255, 0.8) !important; /* 80% opacity */
+  backdrop-filter: blur(12px) !important;                  /* Blur effect for content passing behind */
+  -webkit-backdrop-filter: blur(12px) !important;          /* Safari / iOS support */
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  transition: all 0.3s ease;
+  z-index: 1030;
+}
+
+/* Nav Links & Smooth Hover Effect */
+.custom-link {
+  color: #64748b !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px !important;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-link:hover {
+  color: #0f172a !important; /* Dark slate on hover */
+  background-color: #e2effc; /* Subtle light hover pill */
+}
+
+.custom-link.active {
+  color: #0f172a !important;
+  font-weight: 600;
+}
+
+/* Contact Button */
+.btn-contact {
+  background-color: #2B7FFF;
+  color: #ffffff;
+  border: 1px solid #2B7FFF;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.btn-contact:hover {
+  font-weight: bold;
+  background-color: #3485ff;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+/* Main Section */
+
+/* Hero Section Layout */
+.hero-section {
+  background-color: transparent;
+}
+
+/* Heading: Mobile par 2.25rem (36px), Desktop par 3.4rem */
+.hero-title {
+  font-size: clamp(2.25rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem; /* Lovable text-lg */
+  line-height: 1.65;
+  max-width: 580px;
+}
+
+/* Badge Styling */
+.hero-badge {
+  color: #64748b !important;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+/* Hero Avatar - Exact Lovable scale */
+.hero-avatar-wrapper {
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.1);
+}
+
+.hero-avatar-img {
+  width: 224px;   /* Lovable mobile: h-56 w-56 (224px) */
+  height: 224px;
+  object-fit: cover;
+  border-color: rgba(122, 175, 255, 0.3) !important;
+}
+
+/* Tablet screens (sm: 576px+) */
+@media (min-width: 576px) {
+  .hero-avatar-img {
+    width: 288px; /* Lovable tablet: h-72 w-72 (288px) */
+    height: 288px;
+  }
+}
+
+/* Large Desktop screens (lg: 992px+) */
+@media (min-width: 992px) {
+  .hero-avatar-img {
+    width: 320px; /* Lovable desktop: h-80 w-80 (320px) */
+    height: 320px;
+  }
+}
+
+/* Buttons */
+.btn-project {
+  background-color: #2B7FFF;
+  color: #ffffff;
+  border: 1px solid #2B7FFF;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-project:hover {
+  background-color: #1a6fe8;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(43, 127, 255, 0.25);
+}
+
+.btn-resume {
+  background-color: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-resume:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+/* About Section Styles */
+.about-section {
+  scroll-margin-top: 5rem;
+}
+
+.about-container {
+  max-width: 1152px; /* Restricts card to exact Lovable max-w-6xl width */
+}
+
+/* Card Container */
+.about-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+}
+
+.about-badge {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: #2B7FFF !important;
+}
+
+.about-title {
+  color: #0F172A;
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+/* Paragraph Typography (Clean & Compact) */
+.about-content p {
+  line-height: 1.65;
+  color: #475569;
+  font-size: 1.125rem; /* 1-2 points smaller than standard fs-5 */
+}
+
+/* Skill / Interest Pills */
+.skill-pill {
+  background-color: #E3F0FF;
+  color: #004bbb;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 50px;
+  display: inline-block;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+  background-color: #d0e5ff;
+  transform: translateY(-1px);
+}
+
+/* Projects Section Container */
+.projects-section {
+  scroll-margin-top: 5rem;
+}
+
+.projects-container {
+  max-width: 1152px; /* Lovable max-w-6xl */
+}
+
+/* Header Text */
+.section-badge {
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  color: #2B7FFF;
+}
+
+.section-header {
+  max-width: 42rem;
+}
+
+.section-title {
+  color: #0F172A;
+  font-size: clamp(1.875rem, 3vw, 2.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+/* Modern Card Box */
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.12);
+}
+
+/* Image */
+.project-img {
+  height: 176px; /* Lovable h-44 (11rem) */
+  object-fit: cover;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Card Content */
+.project-title {
+  color: #0F172A;
+  font-size: 1.125rem; /* Lovable text-lg */
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.project-desc {
+  font-size: 0.95rem; /* Lovable text-[0.95rem] */
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* Tech Tags */
+.tech-tag {
+  background-color: #f1f5f9;
+  color: #64748b;
+  font-size: 0.75rem; /* Lovable text-xs */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Action Link */
+.project-link {
+  color: #2B7FFF;
+  font-size: 0.875rem;
+  transition: color 0.2s ease, gap 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-link:hover {
+  color: #1a6fe8;
+  text-decoration: underline !important;
+}
+
+/* Container Width standard */
+.section-container {
+  max-width: 1152px;
+}
+
+.experience-section, #resume {
+  scroll-margin-top: 5rem;
+}
+
+/* Base Card Style */
+.info-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 
+              0 10px 25px -5px rgba(15, 23, 42, 0.08);
+}
+
+.card-heading {
+  color: #0F172A;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Timeline Components */
+.timeline-wrapper {
+  border-left: 1px solid #e2e8f0;
+  padding-left: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: calc(-1.5rem - 6.5px);
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background-color: #2B7FFF;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.timeline-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.timeline-sub {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2B7FFF;
+}
+
+.timeline-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Skill Badges */
+.skill-category-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #64748b;
+}
+
+.skill-badge {
+  background-color: #ffffff;
+  color: #0F172A;
+  border: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* Resume Callout Card */
+.resume-callout {
+  background-color: #1D293D;
+  border: 1px solid rgba(43, 127, 255, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 
+              0 10px 25px -5px rgba(15, 23, 42, 0.08);
+}
+
+.resume-callout-title {
+  color: #ffffff;
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-secondary-callout {
+  color:#B2BDC6;
+}
+
+/* Contact Section Max-Width (Lovable max-w-3xl) */
+.contact-section {
+  scroll-margin-top: 5rem;
+}
+
+.contact-container {
+  max-width: 768px; /* 48rem - Lovable max-w-3xl */
+}
+
+.contact-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 
+              0 10px 25px -5px rgba(15, 23, 42, 0.08);
+}
+
+.contact-title {
+  color: #0F172A;
+  font-size: clamp(1.875rem, 3vw, 2.25rem);
+  letter-spacing: -0.02em;
+}
+
+.contact-subtitle {
+  max-width: 440px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Custom Input Fields */
+.custom-input {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: #0F172A;
+  transition: all 0.2s ease;
+}
+
+.custom-input:focus {
+  background-color: #ffffff;
+  border-color: #2B7FFF;
+  box-shadow: 0 0 0 4px rgba(43, 127, 255, 0.15);
+  color: #0F172A;
+}
+
+.custom-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Direct Channels Box */
+.channel-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.channel-card:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #e2e8f0 !important;
+}
